@@ -3,6 +3,8 @@ import useSWRInfinite from 'swr/infinite'
 import { useAjax } from '../../lib/ajax'
 import type { Time } from '../../lib/time'
 import { time } from '../../lib/time'
+import cs from 'classnames'
+
 interface Props {
   start: Time
   end: Time
@@ -65,7 +67,6 @@ export const ItemsList: React.FC<Props> = (props) => {
                 py-8px
                 gap-x-12px
                 border-b-1
-                b-solid
                 b="#EEE"
               >
                 <div
@@ -90,7 +91,12 @@ export const ItemsList: React.FC<Props> = (props) => {
                 <div row-start-2 col-start-2 row-end-3 col-end-4 text="#999999">
                   {time(item.happened_at).format('yyyy-MM-dd HH:mm')}
                 </div>
-                <div row-start-1 col-start-3 row-end-2 col-end-4 text="#53A867">
+                <div
+                  className={cs(
+                    'row-start-1 col-start-3 row-end-2 col-end-4',
+                    item.kind === 'income' ? 'text-#53A867' : 'text-#FE7275'
+                  )}
+                >
                   ￥{item.amount / 100}
                 </div>
               </li>

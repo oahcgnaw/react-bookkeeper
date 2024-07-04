@@ -36,13 +36,13 @@ export const ItemsSummary: React.FC<Props> = (props) => {
       text-center
       h-9svh
     >
-      <li text="#FE7275">
+      <li text="#53A867">
         <div>收入</div>
         <div>
           <Money value={income} />
         </div>
       </li>
-      <li text="#53A867">
+      <li text="#FE7275">
         <div>支出</div>
         <div>
           <Money value={expenses} />
