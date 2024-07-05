@@ -46,7 +46,7 @@ export const ItemsPage: React.FC = () => {
       />
       <TimeRangePicker selected={timeRange} onSelect={setTimeRange} />
       {outOfRange ? (
-        <div text-center p-32px>
+        <div className='h-[calc(87svh)] text-center p-32px'>
           自定义时间跨度不能超过 365 天
         </div>
       ) : (
